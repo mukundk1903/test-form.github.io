@@ -1,13 +1,18 @@
 <?php
 //get data from form  
-$name = $_POST['fname'];
-$lname = $_POST['lname'];
-ini_set('display_error', 1);
-error_reporting(E_ALL);
-$from = "77000172+mukundk1903@users.noreply.github.com";
+$name = $_POST['Fname'];
+$lname = $_POST['Lname'];
+$email = $_POST['mail'];
+$phone = $_POST['tel'];
+$job = $_POST['Jobb'];
+$exp = $_POST['exp'];
+$link = $_POST['link'];
+$portf = $_POST['portf'];
 $to = "mukundk712@gmail.com";
-$subject = "New Job Application";
-$message = "First Name = " . $name . "\r\n Last Name =" . $lname;
-$headers = "From:" . $from;
-mail($to, $subject, $message, $headers);
-echo "<script type='text/javascript'>alert('Application Submitted Successfully. \nThank you')</script>";
+$subject = "Mail From website";
+$txt = "First Name = " . $name . "\r\n Last Name =" . $lname;
+$headers = "From: 77000172+mukundk1903@users.noreply.github.com" . "\r\n" .
+    "CC: somebodyelse@example.com";
+if ($email != NULL) {
+    mail("mukundk712@gmail.com", "Mail from vmdesigngroup", $txt, $headers);
+}
