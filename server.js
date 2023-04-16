@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Handle form submissions
-app.post('/send-email', (req, res) => {
+app.post('/submit-form', (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
