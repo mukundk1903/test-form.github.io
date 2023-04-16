@@ -6,8 +6,8 @@ $email = $_POST['mail'];
 $to = "mukundk712@gmail.com";
 $subject = "Mail From website";
 $txt = "First Name = " . $name . "\r\n Last Name =" . $lname;
-$headers = "From: https://mukundk1903.github.io/test-form.github.io/" . "\r\n" .
+$headers = "From: noreply@mukundkumar.in" . "\r\n" .
     "CC: somebodyelse@example.com";
 if ($email != NULL) {
-    mail("mukundk2410@gmail.com", "Mail from vmdesigngroup", $txt, $headers);
+    mail("mukundk712@gmail.com", "Mail from vmdesigngroup", $txt, $headers);
 }
