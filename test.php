@@ -9,5 +9,5 @@ $txt = "First Name = " . $name . "\r\n Last Name =" . $lname;
 $headers = "From: noreply@mukundkumar.in" . "\r\n" .
     "CC: somebodyelse@example.com";
 if ($email != NULL) {
-    mail($to, "Mail from vmdesigngroup", $txt, $headers);
+    mail($to, $subject, $txt, $headers);
 }
