@@ -1,56 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Form</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail-contact form</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-  <h1>Contact Form</h1>
-  <form id="contact-form">
-    <label for="name">Name:</label>
-    <input type="text" name="name" required>
-    <br>
-    <label for="email">Email:</label>
-    <input type="email" name="email" required>
-    <br>
-    <label for="message">Message:</label>
-    <textarea name="message" required></textarea>
-    <br>
-    <input type="submit" value="Send">
-  </form>
 
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script>
-    // Define the email message
-    const form = document.querySelector('#contact-form');
-    const message = {
-      from: 'mukundk712@gmail.com',
-      to: 'mukundk2410@gmail.com',
-      subject: 'New contact form submission',
-      body: `Name: ${form.name.value}\nEmail: ${form.email.value}\nMessage: ${form.message.value}`
-    };
+    <div class="container">
+        <div class="box">
+            <form id="form" onsubmit="SendEmail(); return false;">
+                Name : <input type="text" name="name" id="name" placeholder="Enter your name"><br>
+                contact : <input type="number" name="contact" id="contact" placeholder="Enter your contact"><br>
+                Email : <input type="email" name="email" id="email" placeholder="Enter your email"><br>
+                Message:
+                <textarea name="msg" id="" cols="30" rows="10" placeholder="Enter the message"></textarea>
+                <button type="submit" class="btn">Send</button>
 
-    // Define the SMTP server settings
-    const smtp = {
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: true, // set this to true if using SSL/TLS encryption
-      username: 'mukundk712@gmail.com',
-      password: 'ppptzlvpqiitynom'
-    };
+            </form>
+        </div>
+    </div>
+ 
+    <script href="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function SendEmail(){
+            Email.send({
+            Host : "smtp.gmail.com",
+            Username : "mukundk712@gmail.com",
+            Password : "bokkhvmgkcvwvhpl",
+            To : 'mukundkumar.in',
+            From : "mukundk712@gmail.com",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+            message => alert(message)
+    );
+        }
+    </script>
 
-    // Send the email using SMTP.js when the form is submitted
-    form.addEventListener('submit', (event) => {
-      event.preventDefault(); // prevent the form from submitting normally
-
-      Email.send({
-        ...message,
-        ...smtp,
-        tls: {ciphers: "SSLv3"}
-      })
-        .then(() => alert('Email sent successfully'))
-        .catch(err => console.error('Error sending email:', err));
-    });
-  </script>
 </body>
+
 </html>
