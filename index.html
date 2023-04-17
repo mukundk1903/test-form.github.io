@@ -43,9 +43,11 @@
     form.addEventListener('submit', (event) => {
       event.preventDefault(); // prevent the form from submitting normally
 
-      SMTP.connect(smtp)
-        .authenticate()
-        .send(message)
+      Email.send({
+        ...message,
+        ...smtp,
+        tls: {ciphers: "SSLv3"}
+      })
         .then(() => alert('Email sent successfully'))
         .catch(err => console.error('Error sending email:', err));
     });
