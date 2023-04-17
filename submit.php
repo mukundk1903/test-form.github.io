@@ -2,13 +2,14 @@
 // Replace these values with your own information
 $from = "mukundk712@gmail.com";
 $to = "mukundk2410@gmail.com";
-$subject = "Test Email";
-$body = "This is a test email from PHP.";
+$subject = "New message from your website";
+$name = $_POST["name"];
+$message = $_POST["message"];
 
 // Gmail SMTP server settings
 $host = "smtp.gmail.com";
 $username = "mukundk712@gmail.com";
-$password = "grlimocaemepxwif";
+$password = "bokkhvmgkcvwvhpl";
 $port = 587; // or 465 for SSL/TLS encrypted connection
 
 // Create a new PHPMailer instance
@@ -28,11 +29,11 @@ $mail->setFrom($from);
 $mail->addAddress($to);
 $mail->isHTML(true);
 $mail->Subject = $subject;
-$mail->Body = $body;
+$mail->Body = "Name: $name<br>Message: $message";
 
 // Send the email and check for errors
 if ($mail->send()) {
-    echo "Email sent successfully.";
+    echo "Thank you for your message, $name. We will get back to you soon.";
 } else {
     echo "Error: " . $mail->ErrorInfo;
 }
