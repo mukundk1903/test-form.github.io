@@ -1,7 +1,7 @@
 <?php
 // Replace these values with your own information
-$from = "your-email@gmail.com";
-$to = "recipient-email@example.com";
+$from = "mukundk712@gmail.com";
+$to = "mukundk2410@gmail.com";
 $subject = "Test Email";
 $body = "This is a test email from PHP.";
 
