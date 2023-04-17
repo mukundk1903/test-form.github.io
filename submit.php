@@ -10,7 +10,7 @@ $message = $_POST["message"];
 $host = "smtp.gmail.com";
 $username = "mukundk712@gmail.com";
 $password = "bokkhvmgkcvwvhpl";
-$port = 587; // or 465 for SSL/TLS encrypted connection
+$port = 465; // or 465 for SSL/TLS encrypted connection
 
 // Create a new PHPMailer instance
 require_once "phpmailer/PHPMailer.php";
